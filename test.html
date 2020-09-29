@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="splide">
+	<div class="splide__slider">
+		<div class="splide__track">
+			<ul class="splide__list">
+				<li class="splide__slide">Slide 01</li>
+				<li class="splide__slide">Slide 02</li>
+				<li class="splide__slide">Slide 03</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="splide__autoplay">
+		<button class="splide__play">Play</button>
+		<button class="splide__pause">Pause</button>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script type="text/javascript">
+	new Splide( '#splide', {
+	type        : 'loop',
+	perPage     : 3,
+	autoplay    : true,
+	pauseOnHover: false,
+} ).mount();
+</script>
+</body>
+</html>
