@@ -17,10 +17,10 @@
   <a href='cart.html' >Cart</a>
   <a id='taguser' style="float: right;"></a>
 </div>
-<div><h3 style="color: white; width:100%">similator</h3></div>
+<div><h3 style="color: white; width:100%">Offline Games</h3></div>
 <div id='display'></div>
-	<button class="prev" onclick="showDivs(1)">&#10094;</button>
-  <button class="next" onclick="showDivs(-1)">&#10095;</button>
+  <button class="prev" onclick="showDivs(-1)">&#10094;</button>
+  <button class="next" onclick="showDivs(+1)">&#10095;</button>
 </div>
 
 
@@ -37,28 +37,30 @@ if(sessionStorage.getItem("user")=== null){
 document.getElementById("taguser").innerHTML ='Welcome '+sessionStorage.getItem("user");
 }
 
-var index=0;
-display(index,index+4);
-index=index+2;
-document.getElementById("taguser").innerHTML ='Welcome '+sessionStorage.getItem("user");
+var index=7;
+display(index,index+3);
+
+
+
+
+ function showDivs(n) {
+ if(index+n<0 || index+n+3>=games.length){
+  window.alert('you can not click more!!');
+  return false;
+}else{
+  $('#display').html('')
+  display(index+n,(index+3+n))
+  index+=n;
+}
+
+}
 var arr=[];
+
 $('.add').click(function(e){ 
 var moment=e.target.id;
 arr.push(moment)
 localStorage.setItem('buy2',arr);
-
-
 });
-
-
-// function showDivs(n) {
-// 	$('#display').html('')
-// 	if (games.length-1>index+n){
-// 		alert('heeeeey')
-// 	}
-// 	display((index+n),(index+2+n))
-
-// }
 </script>
 
 
